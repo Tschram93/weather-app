@@ -73,14 +73,69 @@ Left Side of Screen "Search for a City:" h2 -->
 
 
         <!-- "5-Day Forecast" (h2) -->
+        <section class="fixed inset-x-80 inset-y-64">
+            <h3 class="text-xl font-bold"> 5-Day Forecast</h3>
+            <div class="container">
+                <div class="flex flex-wrap">
+                    <!-- 5 card elements -->
+                    <!-- 5 consecutive days each including: -->
+                    <!-- Date -->
+                    <!-- Weather icon for that day -->
+                    <!-- Temp (F) -->
+                    <!-- Wind (mph) -->
+                    <!-- Humidity (%) -->
 
-        <!-- 5 card elements -->
-        <!-- 5 consecutive days each including: -->
-        <!-- Date -->
-        <!-- Weather icon for that day -->
-        <!-- Temp (F) -->
-        <!-- Wind (mph) -->
-        <!-- Humidity (%) -->
+                    <!-- Forecast Day 1 -->
+                    <div id="day1">
+                        <span id=date1></span>
+                        <div id="icon1"></div>
+                        <li> Temp: <span id="temp1"></span> °F</li>
+                        <li> Wind: <span id="wind1"></span> MPH</li>
+                        <li> Humidity: <span id="humidity1"></span> % </li>
+                    </div>
+
+                    <!-- Forecast Day 2 -->
+                    <div id="day2">
+                        <span id=date2></span>
+                        <div id="icon2"></div>
+                        <ul>
+                            <li> Temp: <span id="temp2"></span> °F</li>
+                            <li> Wind: <span id="wind2"></span> MPH</li>
+                            <li> Humidity: <span id="humidity2"></span> % </li>
+                        </ul>
+                    </div>
+
+                    <!-- Forecast Day 3 -->
+                    <div id="day3">
+                        <span id=date3></span>
+                        <div id="icon3"></div>
+                        <li> Temp: <span id="temp3"></span> °F</li>
+                        <li> Wind: <span id="wind3"></span> MPH</li>
+                        <li> Humidity: <span id="humidity3"></span> % </li>
+                    </div>
+
+                    <!-- Forecast Day 4 -->
+                    <div id="day4">
+                        <span id=date4></span>
+                        <div id="icon4"></div>
+                        <li> Temp: <span id="temp4"></span> °F</li>
+                        <li> Wind: <span id="wind4"></span> MPH</li>
+                        <li> Humidity: <span id="humidity4"></span> % </li>
+                    </div>
+
+                    <!-- Forecast Day 5 -->
+                    <div id="day5">
+                        <span id=date5></span>
+                        <div id="icon5"></div>
+                        <li> Temp: <span id="temp5"></span> °F</li>
+                        <li> Wind: <span id="wind5"></span> MPH</li>
+                        <li> Humidity: <span id="humidity5"></span> % </li>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
     </div>
     <script src="script.js"></script>
 </body>
