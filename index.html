@@ -13,30 +13,47 @@
 <body>
 
     <head>
+        <!-- color gradiant light blue to Dark Blue, White font -->
         <div class="bg-gradient-to-r from-blue-400 to-blue-900 ...
         text-center text-white text-3xl font-semibold py-2">
             <!-- Heading section "Weather Dashboard" -->
             <h1 class="">Weather Dashboard</h1>
-            <!-- color gradiant light blue to Dark Blue, White font -->
         </div>
     </head>
 
-
-    <!-- Create a card for a city (main card) (Section element) -->
-    <!-- City h1 heading with current date -->
-    <!-- List of Temp(F) -->
-    <!-- Wind(mph) -->
-    <!-- Humidity(%) -->
-    <!-- UV Index -->
-
-
     <!-- Section Element
 Left Side of Screen "Search for a City:" h2 -->
-    <!-- Search box with placeholder of "Search for a city" -->
-    <!-- Light Blue Search Button beneath search box-->
-    <!-- Margin-Bottom to search box followed by a black border-bottom -->
+    <section class="mx-2">
+        <div class="container max-w-xs">
+            <div class="flex flex-col">
+                <h2 class="text-2xl font-semibold">Search for a City:</h2>
+                <input class="border border-black-2" type="text" placeholder="Search for a City">
+                <!-- Search box with placeholder of "Search for a city" -->
 
-    <!-- Previous searches will display in gray boxes below the border -->
+                <!-- make border bottom black visible -->
+                <button class="bg-blue-400 mb-4 border-b-2" type="submit"> Search </button>
+                <!-- Light Blue Search Button beneath search box-->
+                <!-- Margin-Bottom to search box followed by a black border-bottom -->
+            </div>
+
+            <!-- Previous searches will display in gray boxes below the border -->
+        </div>
+    </section>
+
+
+    <!-- Create a card for a city (main card) (Section element) -->
+    <section>
+        <div class="container">
+            <h1 id="todaysCard" class="text-2xl font-bold">Detroit</h1>
+            <!-- City h1 heading with current date -->
+            <!-- List of Temp(F) -->
+            <!-- Wind(mph) -->
+            <!-- Humidity(%) -->
+            <!-- UV Index -->
+        </div>
+    </section>
+
+
 
 
 
