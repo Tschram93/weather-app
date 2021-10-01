@@ -76,7 +76,7 @@ Left Side of Screen "Search for a City:" h2 -->
         <section class="fixed inset-x-80 inset-y-64">
             <h3 class="text-xl font-bold mb-2"> 5-Day Forecast:</h3>
             <div class="container w-screen">
-                <div class="flex flex-wrap bg-indigo-800 text-white justify-around">
+                <div class="flex flex-wrap  justify-start justify-evenly">
                     <!-- 5 card elements -->
                     <!-- 5 consecutive days each including: -->
                     <!-- Date -->
@@ -89,22 +89,24 @@ Left Side of Screen "Search for a City:" h2 -->
                     <!--TODO: make mobile responsive -->
 
                     <!-- Forecast Day 1 -->
-                    <div id="day1" class="flex flex-col">
-                        <div class="line-loose">
-                            <span id=date1></span>
-                            <div id="icon1"></div>
-                            <li> Temp: <span id="temp1"></span> °F</li>
-                            <li> Wind: <span id="wind1"></span> MPH</li>
-                            <li> Humidity: <span id="humidity1"></span> % </li>
+                    <div id="day1" class="flex flex-col bg-blue-900 text-white mt-2 pt-2 pl-2 ml-2 pb-6 pr-16">
+                        <div class="leading-loose">
+                            <span class="text-lg font-bold" id=date1>10/02/2021</span>
+                            <div id="icon1">*</div>
+                            <ul class="font-semibold">
+                                <li> Temp: <span id="temp1"></span> °F</li>
+                                <li> Wind: <span id="wind1"></span> MPH</li>
+                                <li> Humidity: <span id="humidity1"></span> % </li>
+                            </ul>
                         </div>
                     </div>
 
                     <!-- Forecast Day 2 -->
-                    <div id="day2" class="flex flex-col max">
-                        <div class="line-loose">
-                            <span id=date2></span>
-                            <div id="icon2"></div>
-                            <ul>
+                    <div id="day2" class="flex flex-col bg-blue-900 text-white mt-2 pt-2 pl-2 ml-2 pb-6 pr-16 max">
+                        <div class="leading-loose">
+                            <span class="text-lg font-bold" id=date2>10/03/2021</span>
+                            <div id="icon2">*</div>
+                            <ul class="font-semibold">
                                 <li> Temp: <span id="temp2"></span> °F</li>
                                 <li> Wind: <span id="wind2"></span> MPH</li>
                                 <li> Humidity: <span id="humidity2"></span> % </li>
@@ -113,35 +115,41 @@ Left Side of Screen "Search for a City:" h2 -->
                     </div>
 
                     <!-- Forecast Day 3 -->
-                    <div id="day3" class="flex flex-col">
-                        <div class="line-loose">
-                            <span id=date3></span>
-                            <div id="icon3"></div>
-                            <li> Temp: <span id="temp3"></span> °F</li>
-                            <li> Wind: <span id="wind3"></span> MPH</li>
-                            <li> Humidity: <span id="humidity3"></span> % </li>
+                    <div id="day3" class="flex flex-col bg-blue-900 text-white mt-2 pt-2 pl-2 ml-2 pb-6 pr-16">
+                        <div class="leading-loose">
+                            <span class="text-lg font-bold" id=date3>10/04/2021</span>
+                            <div id="icon3">*</div>
+                            <ul class="font-semibold">
+                                <li> Temp: <span id="temp3"></span> °F</li>
+                                <li> Wind: <span id="wind3"></span> MPH</li>
+                                <li> Humidity: <span id="humidity3"></span> % </li>
+                            </ul>
                         </div>
                     </div>
 
                     <!-- Forecast Day 4 -->
-                    <div id="day4" class="flex flex-col">
-                        <div class="line-loose">
-                            <span id=date4></span>
-                            <div id="icon4"></div>
-                            <li> Temp: <span id="temp4"></span> °F</li>
-                            <li> Wind: <span id="wind4"></span> MPH</li>
-                            <li> Humidity: <span id="humidity4"></span> % </li>
+                    <div id="day4" class="flex flex-col bg-blue-900 text-white mt-2 pt-2 pl-2 ml-2 pb-6 pr-16">
+                        <div class="leading-loose">
+                            <span class="text-lg font-bold" id=date4>10/05/2021</span>
+                            <div id="icon4">*</div>
+                            <ul class="font-semibold">
+                                <li> Temp: <span id="temp4"></span> °F</li>
+                                <li> Wind: <span id="wind4"></span> MPH</li>
+                                <li> Humidity: <span id="humidity4"></span> % </li>
+                            </ul>
                         </div>
                     </div>
 
                     <!-- Forecast Day 5 -->
-                    <div id="day5" class="flex flex-col">
-                        <div class="line-loose">
-                            <span id=date5></span>
-                            <div id="icon5"></div>
-                            <li> Temp: <span id="temp5"></span> °F</li>
-                            <li> Wind: <span id="wind5"></span> MPH</li>
-                            <li> Humidity: <span id="humidity5"></span> % </li>
+                    <div id="day5" class="flex flex-col bg-blue-900 text-white mt-2 pt-2 pl-2 ml-2 pb-6 pr-16 mr-10">
+                        <div class="leading-loose">
+                            <span class="text-lg font-bold" id=date5>10/06/2021</span>
+                            <div id="icon5">*</div>
+                            <ul class="font-semibold">
+                                <li> Temp: <span id="temp5"></span> °F</li>
+                                <li> Wind: <span id="wind5"></span> MPH</li>
+                                <li> Humidity: <span id="humidity5"></span> % </li>
+                            </ul>
                         </div>
                     </div>
 
