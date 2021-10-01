@@ -33,19 +33,30 @@ Left Side of Screen "Search for a City:" h2 -->
                     <!-- Search box with placeholder of "Search for a city" -->
 
                     <!-- make border bottom black visible -->
-                    <button class="bg-blue-400 rounded mb-4 my-1 text-white font-semibold pb-1" type="submit"> Search
+                    <button class="submitBtn bg-blue-400 rounded mb-4 my-1 text-white font-semibold pb-1" type="submit">
+                        Search
                     </button>
                     <!-- Light Blue Search Button beneath search box-->
                     <!-- Margin-Bottom to search box followed by a black border-bottom -->
                 </div>
 
-                <!-- Previous searches will display in gray boxes below the border -->
+                <!-- Previous searches will display in light gray boxes below the border -->
+                <section class="fixed mt-4 w-1/5">
+                    <div class="container">
+                        <!-- .pastSearches needs to be added with javascript -->
+                        <div
+                            class="pastSearches  bg-gray-300 rounded mb-4 my-1 text-black font-semibold pb-1 text-center leading-loose">
+                            Austin
+                        </div>
+
+                    </div>
+                </section>
             </div>
         </section>
 
 
         <!-- Create a card for a city (main card) (Section element) -->
-        <section class="relative inset-x-80 inset-y-5 border-2 border-gray-300 pt-1 pb-3 w-2/3">
+        <section class=" relative inset-x-80 inset-y-5 border-2 border-gray-300 pt-1 pb-3 w-2/3">
             <div class="container">
                 <div class="flex flex-col w-2/4 ml-2">
                     <h1 id="todaysCard" class="text-2xl font-bold">Detroit <span id="currentDate"
@@ -61,7 +72,8 @@ Left Side of Screen "Search for a City:" h2 -->
                         <!-- Humidity(%) -->
                         <li>Humidity: <span id="currentHumidity"> % </span></li>
                         <!-- UV Index -->
-                        <li>UV Index: <span class="bg-green-700 rounded px-3 text-white" id="currentUV"> 0.47 </span>
+                        <li>UV Index: <span class="bg-green-700 rounded px-3 text-white" id="currentUV">
+                                0.47 </span>
                         </li>
                     </ul>
                 </div>

@@ -1,6 +1,16 @@
 // Create Class selector variables
 
+// Search Section
+const submitBtn = document.querySelector('.submitBtn');
 
+// Current Day Weather Card
+const todaysCard = document.querySelector('#todaysCard');
+const currentDate = document.querySelector('#currentDate');
+const currentIcon = document.querySelector('#currentIcon');
+// const el = document.querySelector('');
+// const el = document.querySelector('');
+
+console.log(currentIcon);
 // assign "openweatheapi" url variable
 // assign queries variables
 
