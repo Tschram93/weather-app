@@ -15,7 +15,7 @@
     <head>
         <!-- color gradiant light blue to Dark Blue, White font -->
         <div class="bg-gradient-to-r from-blue-400 to-blue-900 ...
-        text-center text-white text-3xl font-semibold py-2">
+        text-center text-white text-3xl font-bold py-2">
             <!-- Heading section "Weather Dashboard" -->
             <h1 class="">Weather Dashboard</h1>
         </div>
@@ -24,15 +24,17 @@
     <div>
         <!-- Section Element
 Left Side of Screen "Search for a City:" h2 -->
-        <section class="fixed mx-2 mt-4">
+        <section class="fixed mx-2 mt-4 w-1/3">
             <div class="container max-w-xs">
-                <div class="flex flex-col border-b-2 border-black">
+                <div class="flex flex-col border-b-2 border-black mr-6">
                     <h2 class="text-2xl font-semibold my-1">Search for a City:</h2>
-                    <input class="border border-black-2 my-1" type="text" placeholder="Search for a City">
+                    <input class="border py-1 border-black-2 rounded my-1" type="text"
+                        placeholder="  Search for a City">
                     <!-- Search box with placeholder of "Search for a city" -->
 
                     <!-- make border bottom black visible -->
-                    <button class="bg-blue-400 mb-4 my-1" type="submit"> Search </button>
+                    <button class="bg-blue-400 rounded mb-4 my-1 text-white font-semibold pb-1" type="submit"> Search
+                    </button>
                     <!-- Light Blue Search Button beneath search box-->
                     <!-- Margin-Bottom to search box followed by a black border-bottom -->
                 </div>
@@ -43,10 +45,13 @@ Left Side of Screen "Search for a City:" h2 -->
 
 
         <!-- Create a card for a city (main card) (Section element) -->
-        <section class="relative inset-x-80 inset-y-5 border-2 border-gray-300 pt-1 pb-3">
+        <section class="relative inset-x-80 inset-y-5 border-2 border-gray-300 pt-1 pb-3 w-2/3">
             <div class="container">
-                <div class="flex flex-col w-2/4">
-                    <h1 id="todaysCard" class="text-2xl font-bold">Detroit</h1>
+                <div class="flex flex-col w-2/4 ml-2">
+                    <h1 id="todaysCard" class="text-2xl font-bold">Detroit <span id="currentDate"
+                            class="text-2xl font-bold"> (10/01/2021) </span>
+                        <div id="currentIcon"></div>
+                    </h1>
                     <!-- Cit y h1 heading with current date -->
                     <ul class="leading-loose">
                         <!-- List of Temp(F) -->
