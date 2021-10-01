@@ -7,10 +7,30 @@ const submitBtn = document.querySelector('.submitBtn');
 const todaysCard = document.querySelector('#todaysCard');
 const currentDate = document.querySelector('#currentDate');
 const currentIcon = document.querySelector('#currentIcon');
-// const el = document.querySelector('');
-// const el = document.querySelector('');
 
-console.log(currentIcon);
+// 5-Day Forecast Cards
+
+// Day 1
+const day1Card = document.querySelector('#day1');
+const icon1 = document.querySelector('#icon1').innerContent;
+const date1 = document.querySelector('#date1').innerText;
+const temp1 = document.querySelector('#temp1').innerText;
+const wind1 = document.querySelector('#wind1').innerText;
+const humidity1 = document.querySelector('#humidity1').innerText;
+
+// Day 2
+
+// Day 3
+
+// Day 4
+
+// Day 5
+
+// const el = document.querySelector('');
+// const el = document.querySelector('');
+console.log(humidity1);
+
+
 // assign "openweatheapi" url variable
 // assign queries variables
 
