@@ -21,52 +21,62 @@
         </div>
     </head>
 
-    <!-- Section Element
+    <div>
+        <!-- Section Element
 Left Side of Screen "Search for a City:" h2 -->
-    <section class="mx-2">
-        <div class="container max-w-xs">
-            <div class="flex flex-col">
-                <h2 class="text-2xl font-semibold">Search for a City:</h2>
-                <input class="border border-black-2" type="text" placeholder="Search for a City">
-                <!-- Search box with placeholder of "Search for a city" -->
+        <section class="fixed mx-2 mt-4">
+            <div class="container max-w-xs">
+                <div class="flex flex-col border-b-2 border-black">
+                    <h2 class="text-2xl font-semibold my-1">Search for a City:</h2>
+                    <input class="border border-black-2 my-1" type="text" placeholder="Search for a City">
+                    <!-- Search box with placeholder of "Search for a city" -->
 
-                <!-- make border bottom black visible -->
-                <button class="bg-blue-400 mb-4 border-b-2" type="submit"> Search </button>
-                <!-- Light Blue Search Button beneath search box-->
-                <!-- Margin-Bottom to search box followed by a black border-bottom -->
+                    <!-- make border bottom black visible -->
+                    <button class="bg-blue-400 mb-4 my-1" type="submit"> Search </button>
+                    <!-- Light Blue Search Button beneath search box-->
+                    <!-- Margin-Bottom to search box followed by a black border-bottom -->
+                </div>
+
+                <!-- Previous searches will display in gray boxes below the border -->
             </div>
-
-            <!-- Previous searches will display in gray boxes below the border -->
-        </div>
-    </section>
+        </section>
 
 
-    <!-- Create a card for a city (main card) (Section element) -->
-    <section>
-        <div class="container">
-            <h1 id="todaysCard" class="text-2xl font-bold">Detroit</h1>
-            <!-- City h1 heading with current date -->
-            <!-- List of Temp(F) -->
-            <!-- Wind(mph) -->
-            <!-- Humidity(%) -->
-            <!-- UV Index -->
-        </div>
-    </section>
+        <!-- Create a card for a city (main card) (Section element) -->
+        <section class="relative inset-x-80 inset-y-5 border-2 border-gray-300 pt-1 pb-3">
+            <div class="container">
+                <div class="flex flex-col w-2/4">
+                    <h1 id="todaysCard" class="text-2xl font-bold">Detroit</h1>
+                    <!-- Cit y h1 heading with current date -->
+                    <ul class="leading-loose">
+                        <!-- List of Temp(F) -->
+                        <li>Temp: <span id="currentTemp"></span>°F</li>
+                        <!-- Wind(mph) -->
+                        <li>Wind: <span id="currentWind"></span>MPH</li>
+                        <!-- Humidity(%) -->
+                        <li>Humidity: <span id="currentHumidity"> % </span></li>
+                        <!-- UV Index -->
+                        <li>UV Index: <span class="bg-green-700 rounded px-3 text-white" id="currentUV"> 0.47 </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
 
 
 
 
-    <!-- "5-Day Forecast" (h2) -->
+        <!-- "5-Day Forecast" (h2) -->
 
-    <!-- 5 card elements -->
-    <!-- 5 consecutive days each including: -->
-    <!-- Date -->
-    <!-- Weather icon for that day -->
-    <!-- Temp (F) -->
-    <!-- Wind (mph) -->
-    <!-- Humidity (%) -->
-
+        <!-- 5 card elements -->
+        <!-- 5 consecutive days each including: -->
+        <!-- Date -->
+        <!-- Weather icon for that day -->
+        <!-- Temp (F) -->
+        <!-- Wind (mph) -->
+        <!-- Humidity (%) -->
+    </div>
     <script src="script.js"></script>
 </body>
 
