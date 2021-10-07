@@ -2,6 +2,7 @@
 
 // Search Section
 const submitBtn = document.querySelector('.submitBtn');
+const inputValue = document.querySelector('#inputValue');
 
 // Current Day Weather Card
 const todaysCard = document.querySelector('#todaysCard');
@@ -50,11 +51,22 @@ const temp5 = document.querySelector('#temp5').innerText;
 const wind5 = document.querySelector('#wind5').innerText;
 const humidity5 = document.querySelector('#humidity5').innerText;
 
-console.log(humidity5);
+// console.log(humidity5);
 
-
+const apiKey = `96f5a24f18a847ade76f1f997da772d5`;
 
 // assign "openweatheapi" url variable
+
+// Current Day Weather URL
+var todayURL = `api.openweathermap.org/data/2.5/weather?q=`+inputValue.value+`&appid=96f5a24f18a847ade76f1f997da772d5&units=imperial`
+
+// `api.openweathermap.org/data/2.5/weather?q=Detroit&appid=96f5a24f18a847ade76f1f997da772d5&units=imperial`
+
+// 5-Day Forecast URL variable
+var forecastURL = `api.openweathermap.org/data/2.5/forecast?q=`+inputValue.value+`&appid=96f5a24f18a847ade76f1f997da772d5&units=imperial`;
+
+// `api.openweathermap.org/data/2.5/forecast?q=Detroit&appid=543cb12439df8f99a6ed8307126391a0&units=imperial`
+
 // assign queries variables
 
 function currentDayWeather(citySearch) {
@@ -65,9 +77,31 @@ function currentDayWeather(citySearch) {
 
 // Fetch 'OpenWeatherAPI"
 
-// Metric to imperial measurements
+// Current Day Fetch
 
 // AddEventListener to search button
+submitBtn.addEventListener('click', function () {
+    fetch(`https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/weather?q=`+inputValue.value+`&appid=96f5a24f18a847ade76f1f997da772d5&units=imperial`)
+        .then(response => response.json())
+        .then(data => console.log(data))
+
+        .catch(err => alert('Please enter a valid city name.'))
+
+    // Forecast Fetch
+    fetch(`https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/forecast?q=`+inputValue.value+`&appid=96f5a24f18a847ade76f1f997da772d5&units=imperial`)
+        .then(response => response.json())
+        .then(data => console.log(data))
+
+        .catch(err => alert('Please enter a valid city name.'))
+
+})
+
+// TODO:
+// function search(event) {
+//     log.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
+//     event.preventDefault();
+// }
+// submitBtn.addEventListener('submit', search )
 // IF search button click search
 
 // Current day (city name) with date
