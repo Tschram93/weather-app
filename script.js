@@ -8,6 +8,11 @@ const inputValue = document.querySelector('#inputValue');
 const todaysCard = document.querySelector('#todaysCard');
 const currentDate = document.querySelector('#currentDate');
 const currentIcon = document.querySelector('#currentIcon');
+const currentTemp = document.querySelector('#currentTemp');
+const currentWind = document.querySelector('#currentWind');
+const currentHumidity = document.querySelector('#currentHumidity');
+
+
 
 // 5-Day Forecast Cards
 
@@ -55,53 +60,46 @@ const humidity5 = document.querySelector('#humidity5').innerText;
 
 const apiKey = `96f5a24f18a847ade76f1f997da772d5`;
 
-// assign "openweatheapi" url variable
 
 // Current Day Weather URL
-var todayURL = `api.openweathermap.org/data/2.5/weather?q=`+inputValue.value+`&appid=96f5a24f18a847ade76f1f997da772d5&units=imperial`
+var todayURL = `api.openweathermap.org/data/2.5/weather?q=` + inputValue.value + `&appid=96f5a24f18a847ade76f1f997da772d5&units=imperial`
 
-// `api.openweathermap.org/data/2.5/weather?q=Detroit&appid=96f5a24f18a847ade76f1f997da772d5&units=imperial`
 
 // 5-Day Forecast URL variable
-var forecastURL = `api.openweathermap.org/data/2.5/forecast?q=`+inputValue.value+`&appid=96f5a24f18a847ade76f1f997da772d5&units=imperial`;
+var forecastURL = `api.openweathermap.org/data/2.5/forecast?q=` + inputValue.value + `&appid=96f5a24f18a847ade76f1f997da772d5&units=imperial`;
 
-// `api.openweathermap.org/data/2.5/forecast?q=Detroit&appid=543cb12439df8f99a6ed8307126391a0&units=imperial`
 
 // assign queries variables
 
-function currentDayWeather(citySearch) {
-    // save api key into variable
 
-    let api = ``;
-};
 
-// Fetch 'OpenWeatherAPI"
-
-// Current Day Fetch
 
 // AddEventListener to search button
 submitBtn.addEventListener('click', function () {
-    fetch(`https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/weather?q=`+inputValue.value+`&appid=96f5a24f18a847ade76f1f997da772d5&units=imperial`)
+    // Fetch 'OpenWeatherAPI"
+
+    // Current Day Fetch
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=` + inputValue.value + `&appid=96f5a24f18a847ade76f1f997da772d5&units=imperial`)
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            // Set variable for api objects
+            let nameValue = data['name'];
+            let tempValue = data['main']['temp'];
+            let windValue = data['wind']['speed'];
+            let humidityValue = data['main']['humidity'];
+            tempInsert.innerText = tempValue;
+            humidityInsert.innerText = humidityValue;
+            weatherStatus.innerText = descValue;
+        })
 
         .catch(err => alert('Please enter a valid city name.'))
 
-    // Forecast Fetch
-    fetch(`https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/forecast?q=`+inputValue.value+`&appid=96f5a24f18a847ade76f1f997da772d5&units=imperial`)
-        .then(response => response.json())
-        .then(data => console.log(data))
 
         .catch(err => alert('Please enter a valid city name.'))
 
 })
 
 // TODO:
-// function search(event) {
-//     log.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
-//     event.preventDefault();
-// }
-// submitBtn.addEventListener('submit', search )
 // IF search button click search
 
 // Current day (city name) with date
@@ -116,3 +114,20 @@ submitBtn.addEventListener('click', function () {
 // if searches add .. else
 
 // Error catch
+
+
+submitBtn.addEventListener('click', () => {
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=` + inputValue.value + `&appid=96f5a24f18a847ade76f1f997da772d5&units=imperial`)
+        .then(response =>
+            response.json())
+        .then(data => {
+            let tempValue = data['list'][0]['main']['temp'];
+            let windValue = data['list'][0]['wind']['speed'];
+            let humidityValue = data['list'][0]['main']['humidity'];
+
+            currentTemp.innerText = tempValue;
+            currentWind.innerText = windValue;
+            currentHumidity.innerText = humidityValue;
+        })
+        .catch(err => console.log('Need to Enter a valid city'))
+});
