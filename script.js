@@ -13,91 +13,71 @@ const currentWind = document.querySelector('#currentWind');
 const currentHumidity = document.querySelector('#currentHumidity');
 
 
-
+// Day1:4 / Day2:12 / Day3:20 / Day4:28 / Day5:36
 // 5-Day Forecast Cards
+submitBtn.addEventListener('click', () => {
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=` + inputValue.value + `&appid=96f5a24f18a847ade76f1f997da772d5&units=imperial`)
+        .then(response =>
+            response.json())
+        .then(data => {
+            let tempValue = data['list'][4]['main']['temp'];
+            let windValue = data['list'][4]['wind']['speed'];
+            let humidityValue = data['list'][4]['main']['humidity'];
+
+            temp1.innerText = tempValue;
+            wind1.innerText = windValue;
+            humidity1.innerText = humidityValue;
+        })
+        .catch(err => console.log('Need to Enter a valid city'))
+});
 
 // Day 1
 const day1Card = document.querySelector('#day1');
 const icon1 = document.querySelector('#icon1').innerContent;
-const date1 = document.querySelector('#date1').innerText;
-const temp1 = document.querySelector('#temp1').innerText;
-const wind1 = document.querySelector('#wind1').innerText;
-const humidity1 = document.querySelector('#humidity1').innerText;
+const date1 = document.querySelector('#date1');
+const temp1 = document.querySelector('#temp1');
+const wind1 = document.querySelector('#wind1');
+const humidity1 = document.querySelector('#humidity1');
 
 // Day 2
 const day2Card = document.querySelector('#day2');
 const icon2 = document.querySelector('#icon2').innerContent;
-const date2 = document.querySelector('#date2').innerText;
-const temp2 = document.querySelector('#temp2').innerText;
-const wind2 = document.querySelector('#wind2').innerText;
-const humidity2 = document.querySelector('#humidity2').innerText;
+const date2 = document.querySelector('#date2');
+const temp2 = document.querySelector('#temp2');
+const wind2 = document.querySelector('#wind2');
+const humidity2 = document.querySelector('#humidity2');
 
 // Day 3
 const day3Card = document.querySelector('#day3');
 const icon3 = document.querySelector('#icon3').innerContent;
-const date3 = document.querySelector('#date3').innerText;
-const temp3 = document.querySelector('#temp3').innerText;
-const wind3 = document.querySelector('#wind3').innerText;
-const humidity3 = document.querySelector('#humidity3').innerText;
+const date3 = document.querySelector('#date3');
+const temp3 = document.querySelector('#temp3');
+const wind3 = document.querySelector('#wind3');
+const humidity3 = document.querySelector('#humidity3');
 
 // Day 4
 const day4Card = document.querySelector('#day4');
 const icon4 = document.querySelector('#icon4').innerContent;
-const date4 = document.querySelector('#date4').innerText;
-const temp4 = document.querySelector('#temp4').innerText;
-const wind4 = document.querySelector('#wind4').innerText;
-const humidity4 = document.querySelector('#humidity4').innerText;
+const date4 = document.querySelector('#date4');
+const temp4 = document.querySelector('#temp4');
+const wind4 = document.querySelector('#wind4');
+const humidity4 = document.querySelector('#humidity4');
 
 // Day 5
 const day5Card = document.querySelector('#day5');
 const icon5 = document.querySelector('#icon5').innerContent;
-const date5 = document.querySelector('#date5').innerText;
-const temp5 = document.querySelector('#temp5').innerText;
-const wind5 = document.querySelector('#wind5').innerText;
-const humidity5 = document.querySelector('#humidity5').innerText;
+const date5 = document.querySelector('#date5');
+const temp5 = document.querySelector('#temp5');
+const wind5 = document.querySelector('#wind5');
+const humidity5 = document.querySelector('#humidity5');
 
 // console.log(humidity5);
 
 const apiKey = `96f5a24f18a847ade76f1f997da772d5`;
 
 
-// Current Day Weather URL
-var todayURL = `api.openweathermap.org/data/2.5/weather?q=` + inputValue.value + `&appid=96f5a24f18a847ade76f1f997da772d5&units=imperial`
-
-
-// 5-Day Forecast URL variable
-var forecastURL = `api.openweathermap.org/data/2.5/forecast?q=` + inputValue.value + `&appid=96f5a24f18a847ade76f1f997da772d5&units=imperial`;
-
-
-// assign queries variables
-
-
-
 
 // AddEventListener to search button
-submitBtn.addEventListener('click', function () {
-    // Fetch 'OpenWeatherAPI"
-
-    // Current Day Fetch
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=` + inputValue.value + `&appid=96f5a24f18a847ade76f1f997da772d5&units=imperial`)
-        .then(response => response.json())
-        .then(data => {
-            // Set variable for api objects
-            let nameValue = data['name'];
-            let tempValue = data['main']['temp'];
-            let windValue = data['wind']['speed'];
-            let humidityValue = data['main']['humidity'];
-            tempInsert.innerText = tempValue;
-            humidityInsert.innerText = humidityValue;
-            weatherStatus.innerText = descValue;
-        })
-
-        .catch(err => alert('Please enter a valid city name.'))
-
-
-        .catch(err => alert('Please enter a valid city name.'))
-
-})
 
 // TODO:
 // IF search button click search
