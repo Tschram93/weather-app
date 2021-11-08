@@ -20,13 +20,42 @@ submitBtn.addEventListener('click', () => {
         .then(response =>
             response.json())
         .then(data => {
-            let tempValue = data['list'][4]['main']['temp'];
-            let windValue = data['list'][4]['wind']['speed'];
-            let humidityValue = data['list'][4]['main']['humidity'];
-
-            temp1.innerText = tempValue;
-            wind1.innerText = windValue;
-            humidity1.innerText = humidityValue;
+            let tempValue1 = data['list'][4]['main']['temp'];
+            let windValue1 = data['list'][4]['wind']['speed'];
+            let humidityValue1 = data['list'][4]['main']['humidity'];
+            let tempValue2 = data['list'][12]['main']['temp'];
+            let windValue2 = data['list'][12]['wind']['speed'];
+            let humidityValue2 = data['list'][12]['main']['humidity'];
+            let tempValue3 = data['list'][20]['main']['temp'];
+            let windValue3 = data['list'][20]['wind']['speed'];
+            let humidityValue3 = data['list'][20]['main']['humidity'];
+            let tempValue4 = data['list'][28]['main']['temp'];
+            let windValue4 = data['list'][28]['wind']['speed'];
+            let humidityValue4 = data['list'][28]['main']['humidity'];
+            let tempValue5 = data['list'][36]['main']['temp'];
+            let windValue5 = data['list'][36]['wind']['speed'];
+            let humidityValue5 = data['list'][36]['main']['humidity'];
+            // Forecast
+            // Day 1
+            temp1.innerText = tempValue1;
+            wind1.innerText = windValue1;
+            humidity1.innerText = humidityValue1;
+            //Day2
+            temp2.innerText = tempValue2;
+            windValue2.innerText = windValue2;
+            humidity2.innerText = humidityValue2;
+            // Day 3
+            temp3.innerText = tempValue3;
+            windValue3.innerText = windValue3;
+            humidity3.innerText = humidityValue3;
+            //Day 4
+            temp4.innerText = tempValue4;
+            windValue4.innerText = windValue4;
+            humidity4.innerText = humidityValue4;
+            //Day 5
+            temp5.innerText = tempValue5;
+            windValue5.innerText = windValue5;
+            humidity5.innerText = humidityValue5;
         })
         .catch(err => console.log('Need to Enter a valid city'))
 });
