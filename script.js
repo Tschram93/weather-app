@@ -1,12 +1,13 @@
 // Create Class selector variables
 
 // Search Section
-const submitBtn = document.querySelector('.submitBtn');
+const submitBtn  = document.querySelector('.submitBtn');
 const inputValue = document.querySelector('#inputValue');
 
 
 // Current Day Weather Card
-const todaysCard = document.querySelector('#todaysCard');
+const todaysCard  = document.querySelector('#todaysCard');
+const cityName    = document.querySelector('#location');
 const currentDate = document.querySelector('#currentDate');
 const currentIcon = document.querySelector('#currentIcon');
 const currentTemp = document.querySelector('#currentTemp');
@@ -151,3 +152,30 @@ submitBtn.addEventListener('click', () => {
         })
         .catch(err => console.log('Need to Enter a valid city'))
 });
+
+submitBtn.addEventListener('click', () => {
+    cityName.innerText = inputValue.value;
+})
+const searchItems = [];
+const pastSearches = document.querySelector('.pastSearches');
+function save() {
+    if(localStorage.getItem('data') == null){
+        localStorage.setItem('data', '[]');
+    }
+    let old_data = JSON.parse(localStorage.getItem('data'));
+    let new_data = inputValue.value;
+    old_data.push(new_data)
+
+    localStorage.setItem('data' , JSON.stringify(old_data));
+}
+
+function createList(){
+    let createList = document.createElement('p');
+    pastSearches.appendChild(createList);
+}
+function viewData() {
+    if(localStorage.getItem('data') != null) {
+        let createList = document.createElement('p');
+    pastSearches.appendChild(createList);
+    }
+}
