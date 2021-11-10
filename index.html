@@ -29,7 +29,7 @@
                     <input id="inputValue" class="border py-1 border-black-2 rounded my-1" type="text"
                         placeholder="  Search for a City">
 
-                    <button onclick="save();" class="submitBtn bg-blue-400 rounded mb-4 my-1 text-white font-semibold pb-1" type="submit">
+                        <button class="submitBtn bg-blue-400 rounded mb-4 my-1 text-white font-semibold pb-1" type="submit">
                         Search
                     </button>
 
@@ -40,7 +40,9 @@
                     <div class="container">
                         <!-- .pastSearches needs to be added with javascript -->
                         <div
-                            class="pastSearches  bg-gray-300 rounded mb-4 my-1 text-black font-semibold pb-1 text-center leading-loose">
+                            class="bg-gray-300 rounded mb-4 my-1 text-black font-semibold pb-1 text-center leading-loose">
+                            <ul class="pastSearches">
+                            </ul>
                         </div>
 
                     </div>
@@ -51,8 +53,7 @@
         <section class=" relative inset-x-80 inset-y-5 border-2 border-gray-300 pt-1 pb-3 w-2/3">
             <div class="container">
                 <div class="flex flex-col w-2/4 ml-2">
-                    <h1 id="todaysCard" class="text-2xl font-bold"><span id="location">Detroit</span> <span id="currentDate"
-                            class="text-2xl font-bold"> (10/01/2021) </span>
+                    <h1 id="todaysCard" class="text-2xl font-bold"><span id="location">Detroit</span> 
                         <div id="currentIcon"></div>
                     </h1>
                     <!-- Cit y h1 heading with current date -->
@@ -80,8 +81,7 @@
                     <!-- Forecast Day 1 -->
                     <div id="day1" class="flex flex-col bg-blue-900 text-white mt-2 pt-1 pl-2 ml-2 pb-6 pr-16">
                         <div class="leading-loose">
-                            <span class="text-lg font-bold" id=date1>10/02/2021</span>
-                            <div src="" id="icon1">*</div>
+                            <div><img src="" id="icon1"></div>
                             <ul class="font-semibold">
                                 <li> Temp: <span id="temp1"></span> °F</li>
                                 <li> Wind: <span id="wind1"></span>  mph</li>
@@ -92,8 +92,7 @@
                     <!-- Forecast Day 2 -->
                     <div id="day2" class="flex flex-col bg-blue-900 text-white mt-2 pt-1 pl-2 ml-2 pb-6 pr-16 max">
                         <div class="leading-loose">
-                            <span class="text-lg font-bold" id=date2>10/03/2021</span>
-                            <div src="" id="icon2">*</div>
+                            <div><img src="" id="icon2"></div>
                             <ul class="font-semibold">
                                 <li> Temp: <span id="temp2"></span> °F</li>
                                 <li> Wind: <span id="wind2"></span>  mph</li>
@@ -105,8 +104,7 @@
                     <!-- Forecast Day 3 -->
                     <div id="day3" class="flex flex-col bg-blue-900 text-white mt-2 pt-1 pl-2 ml-2 pb-6 pr-16">
                         <div class="leading-loose">
-                            <span class="text-lg font-bold" id=date3>10/04/2021</span>
-                            <div id="icon3">*</div>
+                            <div><img src="" id="icon3"></div>
                             <ul class="font-semibold">
                                 <li> Temp: <span id="temp3"></span> °F</li>
                                 <li> Wind: <span id="wind3"></span>  mph</li>
@@ -118,8 +116,7 @@
                     <!-- Forecast Day 4 -->
                     <div id="day4" class="flex flex-col bg-blue-900 text-white mt-2 pt-1 pl-2 ml-2 pb-6 pr-16">
                         <div class="leading-loose">
-                            <span class="text-lg font-bold" id=date4>10/05/2021</span>
-                            <div id="icon4">*</div>
+                            <div><img src="" id="icon4"></div>
                             <ul class="font-semibold">
                                 <li> Temp: <span id="temp4"></span> °F</li>
                                 <li> Wind: <span id="wind4"></span>  mph</li>
@@ -131,8 +128,7 @@
                     <!-- Forecast Day 5 -->
                     <div id="day5" class="flex flex-col bg-blue-900 text-white mt-2 pt-1 pl-2 ml-2 pb-6 pr-16 mr-10">
                         <div class="leading-loose">
-                            <span class="text-lg font-bold" id=date5>10/06/2021</span>
-                            <div id="icon5">*</div>
+                            <div><img src="" id="icon5"></div>
                             <ul class="font-semibold">
                                 <li> Temp: <span id="temp5"></span> °F</li>
                                 <li> Wind: <span id="wind5"></span>  mph</li>

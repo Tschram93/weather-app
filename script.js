@@ -25,49 +25,53 @@ submitBtn.addEventListener('click', () => {
             let tempValue1 = data['list'][4]['main']['temp'];
             let windValue1 = data['list'][4]['wind']['speed'];
             let humidityValue1 = data['list'][4]['main']['humidity'];
-            let iconValue1 = data['list'][4]['weather']['icon'];
+            let iconValue1 = data.list[4].weather[0].icon;
             let tempValue2 = data['list'][12]['main']['temp'];
             let windValue2 = data['list'][12]['wind']['speed'];
             let humidityValue2 = data['list'][12]['main']['humidity'];
-            let iconValue2 = data['list'][12]['weather']['icon'];
+            let iconValue2 = data.list[12].weather[0].icon;
             let tempValue3 = data['list'][20]['main']['temp'];
             let windValue3 = data['list'][20]['wind']['speed'];
             let humidityValue3 = data['list'][20]['main']['humidity'];
-            let iconValue3 = data['list'][20]['weather']['icon'];
+            let iconValue3 = data.list[20].weather[0].icon;
             let tempValue4 = data['list'][28]['main']['temp'];
             let windValue4 = data['list'][28]['wind']['speed'];
             let humidityValue4 = data['list'][28]['main']['humidity'];
-            let iconValue4 = data['list'][28]['weather']['icon'];
+            let iconValue4 = data.list[28].weather[0].icon;
             let tempValue5 = data['list'][36]['main']['temp'];
             let windValue5 = data['list'][36]['wind']['speed'];
             let humidityValue5 = data['list'][36]['main']['humidity'];
-            let iconValue5 = data['list'][36]['weather']['icon'];
+            let iconValue5 = data.list[36].weather[0].icon;
             // Forecast
             // Day 1
             temp1.innerText = tempValue1;
+            icon1.src="http://openweathermap.org/img/wn/"+iconValue1+"@2x.png";
             wind1.innerText = windValue1;
             humidity1.innerText = humidityValue1;
             
             //Day2
             temp2.innerText = tempValue2;
+            icon2.src="http://openweathermap.org/img/wn/"+iconValue2+"@2x.png";
             wind2.innerText = windValue2;
             humidity2.innerText = humidityValue2;
             
             // Day 3
             temp3.innerText = tempValue3;
+            icon3.src="http://openweathermap.org/img/wn/"+iconValue3+"@2x.png";
             wind3.innerText = windValue3;
             humidity3.innerText = humidityValue3;
             
             //Day 4
             temp4.innerText = tempValue4;
+            icon4.src="http://openweathermap.org/img/wn/"+iconValue4+"@2x.png";
             wind4.innerText = windValue4;
             humidity4.innerText = humidityValue4;
             
             //Day 5
             temp5.innerText = tempValue5;
+            icon5.src="http://openweathermap.org/img/wn/"+iconValue5+"@2x.png";
             wind5.innerText = windValue5;
             humidity5.innerText = humidityValue5;
-            
         })
         .catch(err => console.log('Need to Enter a valid city'))
 });
@@ -153,29 +157,9 @@ submitBtn.addEventListener('click', () => {
         .catch(err => console.log('Need to Enter a valid city'))
 });
 
+// Updates h1 heading to Searched city name
 submitBtn.addEventListener('click', () => {
     cityName.innerText = inputValue.value;
 })
 const searchItems = [];
 const pastSearches = document.querySelector('.pastSearches');
-function save() {
-    if(localStorage.getItem('data') == null){
-        localStorage.setItem('data', '[]');
-    }
-    let old_data = JSON.parse(localStorage.getItem('data'));
-    let new_data = inputValue.value;
-    old_data.push(new_data)
-
-    localStorage.setItem('data' , JSON.stringify(old_data));
-}
-
-function createList(){
-    let createList = document.createElement('p');
-    pastSearches.appendChild(createList);
-}
-function viewData() {
-    if(localStorage.getItem('data') != null) {
-        let createList = document.createElement('p');
-    pastSearches.appendChild(createList);
-    }
-}
