@@ -116,30 +116,6 @@ const temp5 = document.querySelector('#temp5');
 const wind5 = document.querySelector('#wind5');
 const humidity5 = document.querySelector('#humidity5');
 
-// console.log(humidity5);
-
-const apiKey = `96f5a24f18a847ade76f1f997da772d5`;
-
-
-
-// AddEventListener to search button
-
-// TODO:
-// IF search button click search
-
-// Current day (city name) with date
-// TEMP, WIND, HUMIDITY, UV INDEX from api for main card(current day)
-
-// 5 day Forecast info fetched for
-// Date
-// TEMP, WIND, HUMIDITY
-
-// Searches saved to localStorage
-// Local Storage content displayed under Search button
-// if searches add .. else
-
-// Error catch
-
 
 submitBtn.addEventListener('click', () => {
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=` + inputValue.value + `&appid=96f5a24f18a847ade76f1f997da772d5&units=imperial`)
@@ -157,9 +133,26 @@ submitBtn.addEventListener('click', () => {
         .catch(err => console.log('Need to Enter a valid city'))
 });
 
-// Updates h1 heading to Searched city name
+// SOURCE:https://stackoverflow.com/questions/67909928/trying-to-build-an-eventlistener-for-localstorage-with-useeffect
+// (ADD OWN NOTES FOR UNDERSTANDING)
+
+// addEventListener for localStorage
+// submitBtn.addEventListener('click', localStorageToPage()=>
+
+
+
+// forward inputValue.value into the <ul> section
+// <ul> section needs CreateElement(li)
+// function localStorageToPage(){
+
+
+
+// function classNames(li) {
+
+//}
 submitBtn.addEventListener('click', () => {
     cityName.innerText = inputValue.value;
 })
 const searchItems = [];
 const pastSearches = document.querySelector('.pastSearches');
+
