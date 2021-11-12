@@ -1,5 +1,5 @@
 // Create Class selector variables
-
+const citySearch = document.querySelector('#inputValue').value;
 // Search Section
 const submitBtn  = document.querySelector('.submitBtn');
 const inputValue = document.querySelector('#inputValue');
@@ -133,26 +133,30 @@ submitBtn.addEventListener('click', () => {
         .catch(err => console.log('Need to Enter a valid city'))
 });
 
-// SOURCE:https://stackoverflow.com/questions/67909928/trying-to-build-an-eventlistener-for-localstorage-with-useeffect
-// (ADD OWN NOTES FOR UNDERSTANDING)
-
-// addEventListener for localStorage
-// submitBtn.addEventListener('click', localStorageToPage()=>
-
-
-
-// forward inputValue.value into the <ul> section
-// <ul> section needs CreateElement(li)
-// function localStorageToPage(){
-
-
-
-// function classNames(li) {
-
-//}
 submitBtn.addEventListener('click', () => {
     cityName.innerText = inputValue.value;
 })
-const searchItems = [];
 const pastSearches = document.querySelector('.pastSearches');
 
+const items = [];
+
+
+submitBtn.onclick = function () {
+    // citySearch is the inputValue.value
+    const inpValue = this.getElementsByClassName('inputValue').value;
+    if( inpValue ){
+        localStorage.setItem( 'City', inpValue );
+    }
+    
+}
+for(let i = 0; i <= localStorage.length; i++) {
+    const value = localStorage.getItem('');
+
+    pastSearches.innerHTML += 
+    `<li>
+        ${citySearch}
+    </li>`;
+}
+submitBtn.addEventListener('click', ()=> {
+    console.log(localStorage);
+} )
