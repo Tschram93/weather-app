@@ -1,13 +1,13 @@
 // Create Class selector variables
 const citySearch = document.querySelector('#inputValue').value;
 // Search Section
-const submitBtn  = document.querySelector('.submitBtn');
+const submitBtn = document.querySelector('.submitBtn');
 const inputValue = document.querySelector('#inputValue');
 
 
 // Current Day Weather Card
-const todaysCard  = document.querySelector('#todaysCard');
-const cityName    = document.querySelector('#location');
+const todaysCard = document.querySelector('#todaysCard');
+const cityName = document.querySelector('#location');
 const currentDate = document.querySelector('#currentDate');
 const currentIcon = document.querySelector('#currentIcon');
 const currentTemp = document.querySelector('#currentTemp');
@@ -45,31 +45,31 @@ submitBtn.addEventListener('click', () => {
             // Forecast
             // Day 1
             temp1.innerText = tempValue1;
-            icon1.src="http://openweathermap.org/img/wn/"+iconValue1+"@2x.png";
+            icon1.src = "http://openweathermap.org/img/wn/" + iconValue1 + "@2x.png";
             wind1.innerText = windValue1;
             humidity1.innerText = humidityValue1;
-            
+
             //Day2
             temp2.innerText = tempValue2;
-            icon2.src="http://openweathermap.org/img/wn/"+iconValue2+"@2x.png";
+            icon2.src = "http://openweathermap.org/img/wn/" + iconValue2 + "@2x.png";
             wind2.innerText = windValue2;
             humidity2.innerText = humidityValue2;
-            
+
             // Day 3
             temp3.innerText = tempValue3;
-            icon3.src="http://openweathermap.org/img/wn/"+iconValue3+"@2x.png";
+            icon3.src = "http://openweathermap.org/img/wn/" + iconValue3 + "@2x.png";
             wind3.innerText = windValue3;
             humidity3.innerText = humidityValue3;
-            
+
             //Day 4
             temp4.innerText = tempValue4;
-            icon4.src="http://openweathermap.org/img/wn/"+iconValue4+"@2x.png";
+            icon4.src = "http://openweathermap.org/img/wn/" + iconValue4 + "@2x.png";
             wind4.innerText = windValue4;
             humidity4.innerText = humidityValue4;
-            
+
             //Day 5
             temp5.innerText = tempValue5;
-            icon5.src="http://openweathermap.org/img/wn/"+iconValue5+"@2x.png";
+            icon5.src = "http://openweathermap.org/img/wn/" + iconValue5 + "@2x.png";
             wind5.innerText = windValue5;
             humidity5.innerText = humidityValue5;
         })
@@ -83,6 +83,7 @@ const date1 = document.querySelector('#date1');
 const temp1 = document.querySelector('#temp1');
 const wind1 = document.querySelector('#wind1');
 const humidity1 = document.querySelector('#humidity1');
+
 
 // Day 2
 const day2Card = document.querySelector('#day2');
@@ -144,19 +145,69 @@ const items = [];
 submitBtn.onclick = function () {
     // citySearch is the inputValue.value
     const inpValue = this.getElementsByClassName('inputValue').value;
-    if( inpValue ){
-        localStorage.setItem( 'City', inpValue );
+    if (inpValue) {
+        localStorage.setItem('City', inpValue);
     }
-    
+
 }
-for(let i = 0; i <= localStorage.length; i++) {
+for (let i = 0; i <= localStorage.length; i++) {
     const value = localStorage.getItem('');
 
-    pastSearches.innerHTML += 
-    `<li>
+    pastSearches.innerHTML +=
+        `<li>
         ${citySearch}
     </li>`;
 }
-submitBtn.addEventListener('click', ()=> {
+submitBtn.addEventListener('click', () => {
     console.log(localStorage);
-} )
+})
+
+//  Dates function
+const formatCurrentDate = (date = new Date()) => {
+    let months = date.getMonth() + 1;
+    let days = date.getDate();
+    let year = date.getFullYear();
+    return `${months}/${days}/${year}`;
+    
+};
+const formatDate1 = (date = new Date()) => {
+    let months = date.getMonth() + 1;
+    let days = date.getDate() + 1;
+    let year = date.getFullYear();
+    return `${months}/${days}/${year}`;
+    
+};
+const formatDate2 = (date = new Date()) => {
+    let months = date.getMonth() + 1;
+    let days = date.getDate() + 2;
+    let year = date.getFullYear();
+    return `${months}/${days}/${year}`;
+    
+};
+const formatDate3 = (date = new Date()) => {
+    let months = date.getMonth() + 3;
+    let days = date.getDate() + 1;
+    let year = date.getFullYear();
+    return `${months}/${days}/${year}`;
+    
+};
+const formatDate4 = (date = new Date()) => {
+    let months = date.getMonth() + 1;
+    let days = date.getDate() + 4;
+    let year = date.getFullYear();
+    return `${months}/${days}/${year}`;
+    
+};
+const formatDate5 = (date = new Date()) => {
+    let months = date.getMonth() + 1;
+    let days = date.getDate() + 5;
+    let year = date.getFullYear();
+    return `${months}/${days}/${year}`;
+    
+};
+currentDate.innerHTML = formatCurrentDate();
+date1.innerText = formatDate1();
+date2.innerText = formatDate2();
+date3.innerText = formatDate3();
+date4.innerText = formatDate4();
+date5.innerText = formatDate5();
